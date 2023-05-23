@@ -21,6 +21,8 @@
  *    If not, see <http://www.gnu.org/licenses/>.
  ***********************************************************************
  */
+#include <stdlib.h>
+#include <stdint.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -37,6 +39,8 @@ extern int wiringPiI2CWriteReg16     (int fd, int reg, int data) ;
 extern int wiringPiI2CSetupInterface (const char *device, int devId) ;
 extern int wiringPiI2CSetup          (const int devId) ;
 
+extern int wiringPiI2CWriteBlockData (int fd, int size, int reg, uint8_t *value);
+extern int wiringPiI2CReadBlockData (int fd, uint8_t reg, uint8_t *values);
 #ifdef __cplusplus
 }
 #endif
